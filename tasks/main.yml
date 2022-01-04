@@ -1,0 +1,15 @@
+---
+- name: Refresh update cache
+  tags: always
+  apt:
+    update_cache: yes
+  changed_when: false
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install update (Ubuntu)
+  tags: always
+  apt:
+    update_cache: yes
+    upgrade: yes
+  when: ansible_distribution == "Ubuntu"
+  notify: update reboot

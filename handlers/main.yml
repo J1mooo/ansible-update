@@ -1,0 +1,4 @@
+---
+- name: update reboot
+  reboot:
+    reboot_timeout: 150
